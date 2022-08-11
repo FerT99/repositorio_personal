@@ -1,8 +1,8 @@
 html, body { 
-    background-color: white(206, 5, 5);
+    background-color: black;
     position: relative;
     text-align: justify;
-    color: black;
+    color: white;
     max-height: max-content;
     padding-bottom: 70px;
 }
@@ -15,7 +15,7 @@ ul {
     width: 300px;
     height: 30px;
     overflow: hidden;
-    background-color: rgb(255, 255, 255);
+    background-color: black;
 }
 
 li {
@@ -24,7 +24,7 @@ li {
 
 li a {
     display: block;
-    color: rgb(0, 0, 0) !important;
+    color: rgb(255, 255, 255) !important;
     text-align: center;
     position: relative;
     padding: 10px 40px;
@@ -37,6 +37,10 @@ li a {
 
 li a:hover {
     background-color: rgb(190, 0, 73);
+}
+
+a href{
+    color:rgb(0, 0, 0)
 }
 
 
