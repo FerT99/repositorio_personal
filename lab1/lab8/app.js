@@ -15,7 +15,10 @@ for (let item of arreglo) {
 const http = require('http');
 
 const server = http.createServer( (request, response) => {
-
+    response.setHeader('Content-Type', 'text/html');
 })
 
 server.listen(5000);
+
+//request.url es para obtener la url de la petición
+//request.socket.remoteAddress es para obtener la dirección IP 
