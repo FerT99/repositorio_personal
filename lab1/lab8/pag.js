@@ -33,7 +33,10 @@ const boton_cambio_perrito = document.getElementById("cambiar_perrito");
 boton_cambio_perrito.onclick = () => {
     console.log("click funciona");
     const imagen = document.getElementById("imagen");
-    imagen.src = 'media/Moka.jpg';
+    if (imagen.src == 'media/Lucky.jpg'){
+        imagen.src = 'media/Moka.jpg';
+    }
+    
 }
 
 //let is_happy = false;
