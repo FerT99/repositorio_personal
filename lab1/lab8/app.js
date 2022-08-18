@@ -22,3 +22,16 @@ server.listen(5000);
 
 //request.url es para obtener la url de la petición
 //request.socket.remoteAddress es para obtener la dirección IP 
+
+//Una función que reciba un arreglo de números y devuelva su promedio.
+function promedio(arreglo) {
+    let suma = 0;
+    for(let i of arreglo) {
+        suma = suma + i;
+        return suma;
+    }
+    let avg = suma/arreglo.length;
+    return avg;
+}
+
+console.log("el promedio es", promedio(arreglo))
