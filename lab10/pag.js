@@ -1,90 +1,31 @@
-// console.warn("Cuidado")
+setTimeout(() => console.log('codigo asincrono'), 4000);
 
-// console.info("Esto es información")
+const filesystem = require('fs');
+filesystem.writeFileSync('hola.txt', 'hola desde node');
 
-// console.assert(1 === 1)
+//crear un servidor 
+const http = require('http');
 
-// console.error("Error")
+const server = http.createServer( (request, response) => {
+    console.log(request.url)
+    console.log(request.socket.remoteAddress)
 
-// //Triple igual compara valor y tipo de dato
-// //Doble igual compara valor únicamente
-
-// alert("Esto es una alerta")
-
-// const nombre = prompt("Cómo te llamas?")
-
-// const is_somnoliento = confirm("Tienes sueño?")
-
-// if (is_somnoliento) {
-//     alert("Hay que dormir mejor hoy");
-// } else {
-//     alert("Has dormido bien estos días.")
-// }
-
-
-// boton.onclick = () => {
-//     console.log("Click!");
-//     document.getElementById("contenedor_imagen").innerHTML = 
-//         '<img src="media/Lucky.jpg" alt="Lucky">';
-// }
-
-const boton_cambio_perrito = document.getElementById("cambiar_perrito");
-
-boton_cambio_perrito.onclick = () => {
-    console.log("click funciona");
-    const imagen = document.getElementById("imagen");
-    if (imagen.src == 'media/Lucky.jpg'){
-        imagen.src = 'media/Moka.jpg';
-    }
+    if(request.url === "/hola") {
+    response.setHeader('Content-Type', 'text/html'); //envía el sobre
+    response.write("<!DOCTYPE html>");
+    response.write('<head><meta charset="utf-8"></head>');
+    response.write("<h1>Hola!</h1>"); //contenido de la carta 
+    response.end(); //hace que respuesta se envíe al cliente 
     
-}
+    }; 
+});
 
-//let is_happy = false;
+const arreglo = [5000, 600, 90, 80, 7000, 500, 300, 200, 500, 20000];
 
-//const foto1 = () => {
-//     const contenedor = document.getElementById("contenedor_imagen");
-//     contenedor.innerHTML = '<img src="media/Moka.jpg" alt="Moka" width="400">';
-//     boton_cambio_perrito.innerText = "Moka";
-//     boton_cambio_perrito.style.backgroundColor = "#f48fb1";
-//     //is_happy = true;
-//     document.body.style.color = "#f48fb1";
-// }
-
-const foto2 = () => {
-    const contenedor = document.getElementById("contenedor_imagen");
-    contenedor.innerHTML = '<img src="media/Lucky.jpg" alt="Lucky" width="400">';
-    boton_cambio_perrito.innerText = "Lucky";
-    boton_cambio_perrito.style.backgroundColor = "#01579b";
-    //is_happy = false;
-}
-
-const foto3 = () => {
-    const contenedor = document.getElementById("contenedor_imagen");
-    contenedor.innerHTML = '<img src="media/Rocky.jpg" alt="Lucky" width="400">';
-    boton_cambio_perrito.innerText = "Rocky";
-    boton_cambio_perrito.style.backgroundColor = "#01579b";
-    //is_happy = false;
-}
-
-const foto4 = () => {
-    const contenedor = document.getElementById("contenedor_imagen");
-    contenedor.innerHTML = '<img src="media/Toby.jpg" alt="Lucky" width="400">';
-    boton_cambio_perrito.innerText = "Toby";
-    boton_cambio_perrito.style.backgroundColor = "#01579b";
-    //is_happy = false;
-}
-
-//Default de la página
-foto2();
-
-boton_cambio_perrito.onclick = () => {
-    if (foto1) {
-        foto2();
-    } else if (foto2) {
-        foto3();
-    } else {
-        foto4()
-    }
+for (let item of arreglo) {
+    setTimeout(() => {
+        console.log(item);
+    }, item);
 }
 
 //Una función que reciba un arreglo de números y devuelva su promedio.
@@ -99,3 +40,6 @@ function promedio(arreglo) {
 }
 
 console.log("el promedio es", promedio(arreglo))
+
+
+server.listen(5000);
