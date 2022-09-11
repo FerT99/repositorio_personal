@@ -1,0 +1,59 @@
+<!DOCTYPE html> 
+
+<html>
+    <head>
+      <link rel="stylesheet" type="text/stylesheet" href="styles.css">
+    </head>
+
+  <body style="background-image: url('./media/goldens.jpg');">
+
+<div id="form" style=" width: 800px; 
+text-align: center; 
+padding-left: 540px; 
+padding-top: 180px;
+box-sizing: border-box; 
+display: flexbox;">
+
+  <div class="card">
+      
+    <div class="card-body">
+
+        <form id="miformulario" onsubmit="validar(); return true" 
+        style="padding: 30px;">
+          
+        <div class="form-group" style="
+        padding-bottom: 50px;">
+              <label for="pass1" style="
+              font-family: Georgia, 'Times New Roman', Times, serif;
+              font-weight: bolder; font-size: 20px;">Contraseña</label>
+              <input type="password" class="form-control" id="pass1" required; 
+              style="width: 200px; height: 25px;
+              border-radius: 7px;">
+          </div>
+
+          <div class="form-group" style="padding-bottom: 30px;">
+              <label for="pass2" style=
+              "font-family: Georgia, 'Times New Roman', Times, serif;
+              font-weight: bolder; font-size: 20px;">Vuelve a escribir la Contraseña</label>
+              <input type="password" class="form-control" id="pass2" required 
+              style="width: 200px; height: 25px;
+              border-radius: 7px;">
+          </div>
+
+        <button type="submit"><a class="btn btn-primary" style=
+          "color: black; text-decoration: none; 
+          font-size: 30px;
+          font-family: 'Times New Roman', Times, serif;" 
+          id="btn-login">Login</a></button> 
+      </form>
+
+    </div>
+  </div>
+</div>
+
+  <script src="eventos.js"></script>
+       
+</body>
+
+</html>
+    
