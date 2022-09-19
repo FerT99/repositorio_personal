@@ -1,10 +1,11 @@
+const { response } = require('express');
 const express = require('express');
 
 const filesystem = require("fs");
 
 const router = express.Router();
 
-const pedidos = [];
+const productos = [];
 
 //rutas html
 router.get('/tienda', (request, response, next) => {
@@ -30,6 +31,10 @@ router.get('/checkout', (request, response, next) => {
 router.get('/solicitarProducto/', (request, response, next) => {
     response.render("pedidos");
 }); //mostrar pag de pedidos
+
+response.get('/', (request, response, next) => {
+    response.render("pedidos", {productos: productos});
+})
 
 router.post('/solicitarProducto', (request, response, next) => {
     console.log(request.body.pedido);
