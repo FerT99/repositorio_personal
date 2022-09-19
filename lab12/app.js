@@ -12,6 +12,10 @@ const ruta_tienda = require("./routes/tienda.routes") //inicializar a la ruta
 
 app.use("/tienda", ruta_tienda); //para usar la ruta
 
+app.use(express.static(path.join(__dirname, 'public')));
+app.set('view engine', 'ejs');
+app.set('views', 'views');
+
 app.use((request, response, next) => {
     console.log('Todo funciona correctamente');
     next(); //Le permite a la petición avanzar hacia el siguiente middleware
