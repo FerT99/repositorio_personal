@@ -1,0 +1,21 @@
+<%- include('includes/header.ejs') %>
+
+<h1>Aquí veremos los productos disponibles.</h1>
+
+<% if (productos.length > 0) { %>
+    <% for (let producto of productos) { %>
+        <div class="card" style="width: 18rem;"></div>
+            <img src="../../lab6/media/descarga.jpg" class="card-img-top" alt="img sueter">
+            <div class="card-body">
+                <p class="card-text"><%= producto.nombre %></p>
+            </div>
+        </div>
+    <% } %>
+<% } else { %>
+    <h3>No tenemos cachorritos</h3>
+<% } %>
+</div>
+
+<a href="/tienda/">Agregar un nuevo Cachorrito</a>
+
+</main>

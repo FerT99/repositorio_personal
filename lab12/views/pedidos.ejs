@@ -1,0 +1,15 @@
+<%- include('includes/header.ejs') %>
+
+<h1>Estos son los pedidos activos.</h1>
+<main>
+    <h2>Agrega un producto:</h2>
+    <p>Ingresa un producto: </p>
+    <form action = '/tienda/nuevo' method = 'POST'>
+        <label for="nombre">Nombre de producto: </label>
+        <input type="text" name="nombre" required>
+        <input type="submit" value="Enviar">
+    </form>
+
+    <a href="/tienda/agregarProducto">Regresar al inicio.</a>
+
+</main>
