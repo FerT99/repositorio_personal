@@ -6,9 +6,6 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({extended: false}));
 
 const ruta_tienda = require("./routes/tienda.routes") //inicializar a la ruta
-//use es para definir un middleware
-//response - le enviamos respuesta de vuelta al cliente
-//next - ejecutamos si queremos que se avance al siguiente middleware
 
 app.use("/tienda", ruta_tienda); //para usar la ruta
 
