@@ -1,45 +1,43 @@
 const express = require('express');
-const bodyParser = require('body-parser');
-const express = require('express');
-
 const app = express();
+
+const bodyParser = require('body-parser');
 
 app.use(bodyParser.urlencoded({extended: false}));
 
-//Middleware
+const ruta_tienda = require("./routes/tienda.routes") //inicializar a la ruta
 //use es para definir un middleware
 //response - le enviamos respuesta de vuelta al cliente
 //next - ejecutamos si queremos que se avance al siguiente middleware
 
+app.use("/tienda", ruta_tienda); //para usar la ruta
+
 app.use((request, response, next) => {
-    console.log('Middleware!');
+    console.log('Todo funciona correctamente');
     next(); //Le permite a la petición avanzar hacia el siguiente middleware
 });
 
-app.get('/trivia', (request, response, next) => {
-    let html = '<!DOCTYPE html>' + 
-    '<head><meta charset="utf-8"></head>' +
-    "<h1>¿Qué bebida te toca tomar hoy?</h1>" + 
-    '<form action="trivia" method="POST">' +
-    '<fieldset>' +
-    "<legend>Bebidas</legend>" + 
-    '<label for="cafe">Cafe</label><input type="text" name="cafe" id="cafe' + //id sirve del lado del cliente, name del lado del servidor
-    '<label for="jugo">Jugo</label><input type="text" name="jugo" id="jugo' +
-    '</fieldset>' + //agrupa en una caja
-    "</form>"; 
-    response.send(html)
+app.use("/inicio", (request, response, next) => {
+    response.send("¡Bienvenido a la tienda DoggyShop!")
+});
+
+app.use("/seccion1", (request, response, next) => {
+    response.send("Aquí encuentras lo que necesitas");
 })
 
-app.post('/trivia', (request, response, next) => {
-    if (Math.floor(Math.random() * 2) == 0) {
-        response.send('<h2>El ganador es: ' + request.body.visitante + '</h2>')
-    } else {
-        response.send('<h2>El ganador es: ' + request.body.local + '</h2>')
-    }
+app.use("/seccion2", (request, response, next) => {
+    response.send("Aquí también encuentras lo que necesitas");
 })
 
-app.use('/hola', (request, response, next) => {
-    response.send('¡Hola desde una ruta!'); //Manda la respuesta
+app.use("/checkout", (request, response, next) => {
+    response.send("¡Aceptamos todos los métodos de pago!");
+})
+
+//error 
+app.use((request, response, next) => {
+    response.statusCode = 404;
+    console.log("algo no funciona correctamente")
+    response.send('Ocurrió un error'); 
 });
 
 app.listen(3000);
