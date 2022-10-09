@@ -18,22 +18,6 @@ app.use((request, response, next) => {
     next(); //Le permite a la petición avanzar hacia el siguiente middleware
 });
 
-app.use("/inicio", (request, response, next) => {
-    response.send("¡Bienvenido a la tienda DoggyShop!")
-});
-
-app.use("/seccion1", (request, response, next) => {
-    response.send("Aquí encuentras lo que necesitas");
-})
-
-app.use("/seccion2", (request, response, next) => {
-    response.send("Aquí también encuentras lo que necesitas");
-})
-
-app.use("/checkout", (request, response, next) => {
-    response.send("¡Aceptamos todos los métodos de pago!");
-})
-
 //error 
 app.use((request, response, next) => {
     response.statusCode = 404;
