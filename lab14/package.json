@@ -1,5 +1,30 @@
 {
+  "name": "lab11",
+  "version": "1.0.0",
+  "description": "Repositorio personal",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FerT99/repositorio_personal.git"
+  },
+  "author": "Fernanda Torres",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FerT99/repositorio_personal/issues"
+  },
+  "homepage": "https://github.com/FerT99/repositorio_personal#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  },
   "dependencies": {
-    "ejs": "^3.1.8"
+    "body-parser": "^1.20.1",
+    "cookie-parser": "^1.4.6",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "express-session": "^1.17.3"
   }
 }

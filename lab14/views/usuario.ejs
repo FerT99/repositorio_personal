@@ -1,0 +1,14 @@
+<%- include('includes/header.ejs') %>
+
+<h1>Bienvenid@ a DoggyShop!</h1>
+
+<main>
+    <form action = '/login/' method = 'POST'> 
+        <label for="name">Ingresa tu nombre: </label>
+        <input type = 'text' name = 'name' required>
+        <label for="contraseña">Ingresa tu contraseña: </label>
+        <input type="text" name = 'contraseña' required>
+        <input type = 'submit' value = 'Iniciar sesión'>
+    </form>
+
+</main>
