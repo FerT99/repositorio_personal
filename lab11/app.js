@@ -10,7 +10,7 @@ const ruta_tienda = require("./routes/tienda.routes") //inicializar a la ruta
 //response - le enviamos respuesta de vuelta al cliente
 //next - ejecutamos si queremos que se avance al siguiente middleware
 
-app.use("/tienda", ruta_tienda); //para usar la ruta
+app.use("/tienda10", ruta_tienda); //para usar la ruta
 
 app.use((request, response, next) => {
     console.log('Todo funciona correctamente');
@@ -36,7 +36,7 @@ app.use("/checkout", (request, response, next) => {
 //error 
 app.use((request, response, next) => {
     response.statusCode = 404;
-    console.log("algo no funciona correctamente")
+    console.log("nada funciona correctamente")
     response.send('Ocurrió un error'); 
 });
 

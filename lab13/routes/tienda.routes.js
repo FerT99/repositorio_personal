@@ -1,10 +1,11 @@
+const { response } = require('express');
 const express = require('express');
 
 const filesystem = require("fs");
 
 const router = express.Router();
 
-const pedidos = [];
+const productos = [];
 
 //rutas html
 router.get('/tienda', (request, response, next) => {
@@ -21,10 +22,19 @@ router.get('/seccion2', (request, response, next) => {
     let ans = '<!DOCTYPE html><html lang="es-mx"><head><title>DoggyShop.</title><meta charset="utf-8"></meta></head><body><h1>Suéteres calientitos.</h1><main><h2>Variedad de suéteres para tu perrito.</h2><p>Hay para todas las razas.</p></body></html>'
     response.send(ans)
 });
+
 router.get('/checkout', (request, response, next) => {
     let ans = '<!DOCTYPE html><html lang="es-mx"><head><title>DoggyShop.</title><meta charset="utf-8"></meta></head><body><h1>Sección de pagos.</h1><main><h2>Aceptamos todos los métodos de pago.</body></html>'
     response.send(ans)
 });
+
+router.get('/solicitarProducto/', (request, response, next) => {
+    response.render("pedidos");
+}); //mostrar pag de pedidos
+
+response.get('/', (request, response, next) => {
+    response.render("pedidos", {productos: productos});
+})
 
 router.post('/solicitarProducto', (request, response, next) => {
     console.log(request.body.pedido);
