@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="./style.css" type="text/stylesheet"> <!--no lee hoja de estilo-->
+</head>
+
+<body>
+    <!-- Barra de navegación -->
+<nav class="navbar navbar-inverse bg-inverse fixed-top bg-faded">
+    <div class="row">
+      <div class="col">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#cart" 
+        style="background-color: crimson; 
+        border-radius: 5px; border-width: 0px;
+        margin-left: 1230px;">Carrito (<span class="total-count"></span>)</button>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- Elementos del carrito -->
+  <div class="container" style="padding-top: 80px; display: flex; margin-bottom: 40px;
+  margin-right: 40px;">
+    <div class="row">
+      <div class="col">
+        <div class="card" style="width: 20rem;">
+          <img class="card-img-top" src="./media/imgdisfraz.jpg" alt="Disfraz de cachorrito">
+          <div class="card-block">
+            <h4 class="card-title">Disfraz cachorrito</h4>
+            <p class="card-text">Precio: $50</p>
+            <a href="#" data-name="Disfraz" data-price="50" class="add-to-cart btn btn-primary" 
+            style="background-color: crimson; 
+        border-radius: 5px; border-width: 0px;">Agregar al carrito</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card" style="width: 20rem;">
+          <img class="card-img-top" src="./media/descarga.jpg" alt="Sueter calientito">
+          <div class="card-block">
+            <h4 class="card-title">Sueter calientito</h4>
+            <p class="card-text">Precio: $40</p>
+            <a href="#" data-name="Sueter" data-price="40" class="add-to-cart btn btn-primary" 
+            style="background-color: crimson; 
+            border-radius: 5px; border-width: 0px;">Agregar al carrito</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card" style="width: 20rem;">
+          <img class="card-img-top" src="./media/carnazas.jpg" alt="Carnazas">
+          <div class="card-block">
+            <h4 class="card-title">Carnazas Olroy</h4>
+            <p class="card-text">Precio: $10</p>
+            <a href="#" data-name="Carnazas" data-price="10" class="add-to-cart btn btn-primary" 
+            style="background-color: crimson; 
+            border-radius: 5px; border-width: 0px;">Agregar al carrito</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="cart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Carrito</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <table class="show-cart table">
+  
+          </table>
+          <div>Total (con IVA incluido): $<span class="total-cart"></span></div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-primary">Ordena ahora</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button><a href="index.html" class="index btn btn-primary" 
+  style="background-color: rgb(20, 193, 220); 
+    border-radius: 5px; border-width: 0px; position: absolute; right: 50px;">Clima hoy en Querétaro</a></button>
+
+<script src="./carrito.js"></script>
+
+</body>
